@@ -1,5 +1,6 @@
-package com.ivanajocovic.weather.networking
+package com.ivanajocovic.weather.networking.api
 
+import com.ivanajocovic.weather.networking.dto.WeatherResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 

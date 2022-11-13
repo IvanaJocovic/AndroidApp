@@ -1,4 +1,4 @@
-package com.ivanajocovic.weather.networking
+package com.ivanajocovic.weather.networking.dto
 
 import com.google.gson.annotations.SerializedName
 
