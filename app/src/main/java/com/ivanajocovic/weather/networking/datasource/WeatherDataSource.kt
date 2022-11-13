@@ -9,11 +9,11 @@ class WeatherDataSource @Inject constructor(
 ) {
 
     suspend fun getForecast(
-        latitude: Double,
-        longitude: Double,
-        hourly: String,
-        daily: String,
-        timezone: String
+        latitude: Double?,
+        longitude: Double?,
+        hourly: String?,
+        daily: String?,
+        timezone: String?
     ): WeatherResponse {
 
         return apiService.getForecast(
