@@ -11,8 +11,8 @@ class WeatherDataSource @Inject constructor(
     suspend fun getForecast(
         latitude: Double?,
         longitude: Double?,
-        hourly: String?,
-        daily: String?,
+        hourly: String? = null,
+        daily: String? = null,
         timezone: String?
     ): WeatherResponse {
 
