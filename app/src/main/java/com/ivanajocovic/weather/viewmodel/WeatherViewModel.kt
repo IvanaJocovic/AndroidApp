@@ -9,6 +9,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
+import java.net.URLEncoder
 import javax.inject.Inject
 
 @HiltViewModel
@@ -27,8 +28,8 @@ class WeatherViewModel @Inject constructor(
                 val weatherResponse = dataSource.getForecast(
                     latitude = 52.52,
                     longitude = 13.41,
-                    //hourly = "temperature_2m,rain,showers,snowfall",
-                    //daily = "temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,sunrise,sunset",
+                    hourly = "temperature_2m,rain,showers,snowfall",
+                    daily = "temperature_2m_max,temperature_2m_min,apparent_temperature_max,apparent_temperature_min,sunrise,sunset",
                     timezone = "Europe/Berlin"
                 )
 

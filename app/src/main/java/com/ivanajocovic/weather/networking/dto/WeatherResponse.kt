@@ -11,8 +11,8 @@ data class WeatherResponse(
     @SerializedName("timezone_abbreviation") val timezoneAbbreviation: String? = null,
     val elevation: Double? = null,
     @SerializedName("hourly_units") val hourlyUnits: HourlyUnitResponse,
-    val hourly: HourlyResponse,
+    val hourly: HourlyResponse? = null,
     @SerializedName("daily_units") val dailyUnits: DailyUnitResponse,
-    val daily: DailyResponse
+    val daily: DailyResponse? = null
 
 )

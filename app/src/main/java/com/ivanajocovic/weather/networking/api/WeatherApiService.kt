@@ -9,8 +9,8 @@ interface WeatherApiService {
     suspend fun getForecast(
         @Query("latitude") latitude: Double?,
         @Query("longitude") longitude: Double?,
-        @Query("hourly") hourly: String?,
-        @Query("daily") daily: String?,
+        @Query("hourly", encoded = true) hourly: String?,
+        @Query("daily", encoded = true) daily: String?,
         @Query("timezone") timezone: String?
     ): WeatherResponse
 }
