@@ -9,5 +9,6 @@ data class HourlyResponse(
     @SerializedName("temperature_2m") val temperature2m: List<Float>? = null,
     val rain: List<Float>? = null,
     val showers: List<Float>? = null,
-    val snowfall: List<Float>? = null
+    val snowfall: List<Float>? = null,
+    @SerializedName("weathercode") val weatherCode: List<Int>? = null
 )

@@ -9,6 +9,6 @@ data class DailyUnitResponse(
     @SerializedName("apparent_temperature_max") val apparentTemperatureMax: String? = null,
     @SerializedName("apparent_temperature_min") val apparentTemperatureMin: String? = null,
     val sunrise: String? = null,
-    val sunset: String? = null
-
+    val sunset: String? = null,
+    @SerializedName("weathercode") val weatherCode: String? = null
 )

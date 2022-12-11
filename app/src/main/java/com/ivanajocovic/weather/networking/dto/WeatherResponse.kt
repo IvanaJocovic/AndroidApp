@@ -15,4 +15,5 @@ data class WeatherResponse(
     @SerializedName("daily_units") val dailyUnits: DailyUnitResponse,
     val daily: DailyResponse? = null
 
+
 )
