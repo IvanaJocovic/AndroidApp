@@ -10,7 +10,7 @@ data class WeatherDayUi(
     val sunset: LocalDateTime? = null,
     val temperatureMax: Float? = null,
     val temperatureMin: Float? = null,
-    val weatherCode: Int? = null,
+    val weatherCode: WeatherCode? = null,
     val hourlyUi: List<WeatherHourlyUi> = emptyList()
 )
 

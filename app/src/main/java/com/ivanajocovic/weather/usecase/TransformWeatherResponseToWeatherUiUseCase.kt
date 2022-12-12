@@ -1,6 +1,7 @@
 package com.ivanajocovic.weather.usecase
 
 import com.ivanajocovic.weather.networking.dto.WeatherResponse
+import com.ivanajocovic.weather.ui.WeatherCode
 import com.ivanajocovic.weather.ui.WeatherDayUi
 import com.ivanajocovic.weather.ui.WeatherHourlyUi
 import java.time.LocalDateTime
@@ -18,7 +19,7 @@ class TransformWeatherResponseToWeatherUiUseCase @Inject constructor() {
             hourlyList.add(
                 WeatherHourlyUi(
                     time = time,
-                    weatherCode = response.hourly.weatherCode?.get(index),
+                    weatherCode = WeatherCode(code = response.hourly.weatherCode?.get(index)),
                     temperature = response.hourly.temperature2m?.get(index),
                     isCurrent = ChronoUnit.MINUTES.between(time, LocalDateTime.now()) < 60
                 )
@@ -33,7 +34,7 @@ class TransformWeatherResponseToWeatherUiUseCase @Inject constructor() {
                     sunset = response.daily.sunset?.get(index),
                     temperatureMax = response.daily.temperature2mMax?.get(index),
                     temperatureMin = response.daily.temperature2mMin?.get(index),
-                    weatherCode = response.daily.weatherCode?.get(index),
+                    weatherCode = WeatherCode(code = response.daily.weatherCode?.get(index)),
                     hourlyUi = hourlyList.filter { it.time?.toLocalDate() == localDate }
                 )
             )
