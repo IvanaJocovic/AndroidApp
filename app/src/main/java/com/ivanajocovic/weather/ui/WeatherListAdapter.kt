@@ -3,7 +3,12 @@ package com.ivanajocovic.weather.ui
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.ivanajocovic.weather.R
 import com.ivanajocovic.weather.databinding.ItemWeatherBinding
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
+import java.time.format.TextStyle
+import java.util.*
 
 class WeatherListAdapter(
     private val weatherDayUi: List<WeatherDayUi>,
@@ -38,9 +43,11 @@ class WeatherListAdapter(
             with(binding) {
 
                 root.setOnClickListener { onSelect(adapterPosition) }
-                itemWeatherDateTxt.text = data.date.toString()
+                itemWeatherDateTxt.text = data.date?.dayOfWeek?.getDisplayName(TextStyle.FULL, Locale.getDefault())
                 itemWeatherTempTxt.text = data.temperatureMax.toString() + " °C"
                 itemWeatherCodeTxt.text = data.weatherCode?.toText()
+                itemWeatherCodeImg.setAnimation(data.weatherCode?.toImg() ?: R.raw.weather_day_clear_sky)
+                itemWeatherCodeImg.playAnimation()
             }
         }
     }
